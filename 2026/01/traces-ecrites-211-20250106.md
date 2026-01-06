@@ -191,8 +191,3 @@ $$y_K = \frac{4 + 6}{2} = \frac{10}{2} = 5$$
 Le milieu est $K(-1 ; 5)$.
 :::
 
-\newpage
-
-**13 janvier**
-
-
