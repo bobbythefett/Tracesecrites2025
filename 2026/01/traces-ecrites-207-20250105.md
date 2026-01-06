@@ -1,0 +1,168 @@
+---
+title: Traces écrites Sec07
+course:
+  classe: Sec07
+  chapitre: Repérage
+lieu: Lycée Alphonse Daudet
+revision: 5 janvier 2026
+preambule: 
+type: 
+  eval: false
+  bac: false
+answers: false # set to true to show answers
+bac:
+  annee: 
+  date: 
+  dernierepage: 
+---
+
+**5 janvier 2026**
+
+# Notion de Repère
+
+Pour se repérer dans le plan, on utilise trois points non alignés $O$, $I$ et $J$ qui forment un **repère**, noté $(O ; I, J)$.
+
+::: definition
+* **L'origine** est le point $O$.
+* **L'axe des abscisses** est la droite $(OI)$ (axe horizontal).
+* **L'axe des ordonnées** est la droite $(OJ)$ (axe vertical).
+* La distance $OI$ donne l'unité sur l'axe des abscisses.
+* La distance $OJ$ donne l'unité sur l'axe des ordonnées.
+:::
+
+## Les différents types de repères
+
+Il est crucial de savoir distinguer les types de repères car certaines formules (comme la distance) ne fonctionnent que dans un cas précis.
+
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{|c|p{8cm}|}
+\hline
+\textbf{Type de Repère} & \textbf{Caractéristique} \\
+\hline
+\textbf{Quelconque} & Les droites $(OI)$ et $(OJ)$ sont sécantes, les unités sont quelconques. \\
+\hline
+\textbf{Orthogonal} & Les droites $(OI)$ et $(OJ)$ sont \textbf{perpendiculaires}. \\
+\hline
+\textbf{Orthonormé} & Les droites $(OI)$ et $(OJ)$ sont \textbf{perpendiculaires} ET les unités sont égales ($OI = OJ = 1$). \\
+\hline
+\end{tabular}
+\end{center}
+
+::: center
+\begin{tikzpicture}[scale=0.8]
+
+    % --- 1. Repère QUELCONQUE ---
+    \begin{scope}[xshift=-5cm]
+        \draw[thick, ->] (-1,0) -- (3,0) node[right] {$x$};
+        \draw[thick, ->] (-.6,-1) -- (1.5,2.5) node[above] {$y$}; % Axe penché
+        \draw (0,0) node[above left] {$O$};
+        
+        % Unité I (Rouge)
+        \draw[red, very thick] (0,0) -- (1,0);
+        \draw[red] (1, -0.1) -- (1, 0.1) node[below=0.2cm] {$I$};
+        
+        % Unité J (Bleu) - Plus longue pour l'exemple
+        \draw[blue, very thick] (0,0) -- (0.6,1); 
+        \draw[blue] (0.5, 1) -- (0.7, 1) node[left=0.1cm] {$J$};
+        
+        \node[below, font=\bfseries] at (1,-1.5) {1. Quelconque};
+        \node[below, align=center, scale=0.8] at (1,-2) {$(OI)$ et $(OJ)$ sécantes \\ $OI \neq OJ$};
+    \end{scope}
+
+    % --- 2. Repère ORTHOGONAL ---
+    \begin{scope}[xshift=0cm]
+        \draw[thick, ->] (-1,0) -- (3,0) node[right] {$x$};
+        \draw[thick, ->] (0,-1) -- (0,2.4) node[above] {$y$};
+        \draw (0,0) node[below left] {$O$};
+        
+        % Angle droit
+        \draw (0,0.3) -- (0.3,0.3) -- (0.3,0);
+        
+        % Unité I (Rouge) - Longue
+        \draw[red, very thick] (0,0) -- (1.5,0);
+        \draw[red] (1.5, -0.1) -- (1.5, 0.1) node[below=0.2cm] {$I$};
+        
+        % Unité J (Bleu) - Courte
+        \draw[blue, very thick] (0,0) -- (0,0.8);
+        \draw[blue] (-0.1, 0.8) -- (0.1, 0.8) node[left=0.1cm] {$J$};
+        
+        \node[below, font=\bfseries] at (1,-1.5) {2. Orthogonal};
+        \node[below, align=center, scale=0.8] at (1,-2) {$(OI) \perp (OJ)$ \\ $OI \neq OJ$};
+    \end{scope}
+
+    % --- 3. Repère ORTHONORMÉ ---
+    \begin{scope}[xshift=5cm]
+        \draw[thick, ->] (-1,0) -- (3,0) node[right] {$x$};
+        \draw[thick, ->] (0,-1) -- (0,2.4) node[above] {$y$};
+        \draw (0,0) node[below left] {$O$};
+        
+        % Angle droit
+        \draw (0,0.3) -- (0.3,0.3) -- (0.3,0);
+        
+        % Unité I (Rouge)
+        \draw[red, very thick] (0,0) -- (1,0);
+        \draw[red] (1, -0.1) -- (1, 0.1) node[below=0.2cm] {$I$};
+        \node[red] at (0.5, 0) {||}; % Marque égalité
+        
+        % Unité J (Bleu) - Même longueur
+        \draw[blue, very thick] (0,0) -- (0,1);
+        \draw[blue] (-0.1, 1) -- (0.1, 1) node[left=0.1cm] {$J$};
+        \node[blue] at (0, 0.5) {=}; % Marque égalité
+        
+        \node[below, font=\bfseries] at (1,-1.5) {3. Orthonormé};
+        \node[below, align=center, scale=0.8] at (1,-2) {$(OI) \perp (OJ)$ \\ $OI = OJ$};
+    \end{scope}
+
+\end{tikzpicture}
+:::
+
+::: remarque
+Sauf mention contraire, on travaille généralement dans un **repère orthonormé** pour simplifier les calculs de distances.
+:::
+
+# Coordonnées d'un point
+
+::: definition
+Dans un repère $(O ; I, J)$, tout point $M$ est repéré par un unique couple de nombres réels $(x_M ; y_M)$.
+
+* $x_M$ est l'**abscisse** de $M$.
+* $y_M$ est l'**ordonnée** de $M$.
+
+On note le point : $M(x_M ; y_M)$.
+:::
+
+::: exemple
+Sur la figure ci-dessous :
+
+* Le point $A$ a pour abscisse $2$ et pour ordonnée $3$. On note $A(2 ; 3)$.
+* Le point $B$ a pour abscisse $-1$ et pour ordonnée $-2$. On note $B(-1 ; -2)$.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.8]
+    % Grille
+    \draw[help lines, color=gray!30, dashed] (-3,-3) grid (4,4);
+    % Axes
+    \draw[->, thick] (-3,0)--(4,0) node[right]{$x$};
+    \draw[->, thick] (0,-3)--(0,4) node[above]{$y$};
+    % Origine et unités
+    \draw (0,0) node[below left]{$O$};
+    \draw [thick] (1,-0.1)--(1,0.1) node[below=0.2cm]{$I$};
+    \draw [thick] (-0.1,1)--(0.1,1) node[left=0.1cm]{$J$};
+    
+    % Point A
+    \fill [red] (2,3) circle (2pt) node[above right]{$A$};
+    \draw [dashed, red] (2,0) -- (2,3) -- (0,3);
+    \node [red, below] at (2,0) {$2$};
+    \node [red, left] at (0,3) {$3$};
+
+    % Point B
+    \fill [blue] (-1,-2) circle (2pt) node[below left]{$B$};
+    \draw [dashed, blue] (-1,0) -- (-1,-2) -- (0,-2);
+    \node [blue, above] at (-1,0) {$-1$};
+    \node [blue, right] at (0,-2) {$-2$};
+\end{tikzpicture}
+\end{center}
+:::
+
+
