@@ -37,5 +37,3 @@ $$f(x) = ax + b$$
 * $k(x) = 3x$ est affine **linéaire** ($a=3, b=0$).
 :::
 
-**7 janvier 2026 : H2**
-
