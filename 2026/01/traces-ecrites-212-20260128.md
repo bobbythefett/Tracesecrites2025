@@ -272,5 +272,4 @@ Soit $A(1 ; 2)$ et $B(4 ; -2)$. Calculons la longueur $AB$.
     $$AB = 5$$
 :::
 
-**15 janvier 2026**
 
