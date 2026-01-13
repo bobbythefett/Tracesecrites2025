@@ -298,7 +298,3 @@ Pour les racines carrées :
 * Exemple : $\sqrt{9 + 16} = \sqrt{25} = 5$ et non pas $3+4=7$.
 :::
 
-\newpage
-
-**19 janvier 2026**
-
