@@ -83,5 +83,7 @@ $$a = \frac{f(x_2) - f(x_1)}{x_2 - x_1} = \frac{\Delta y}{\Delta x}$$
 
 > **Interprétation :** Dans un modèle linéaire, la variation absolue de la grandeur est proportionnelle à la variation de la variable.
 
-**14 janvier 2026**
+\newpage
+
+**21 janvier 2026**
 
