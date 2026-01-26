@@ -4,7 +4,7 @@ course:
   classe: Sec07
   chapitre: Janvier 2026
 lieu: Lycée Alphonse Daudet
-revision: 27 janvier 2026
+revision: 26 janvier 2026
 preambule: 
 type: 
   eval: false
@@ -94,9 +94,4 @@ Soit la fonction $f$ définie sur $\mathbb{R}$ par $f(x) = x^2 - 1$.
     $$x = 4 \quad \text{ou} \quad x = -4$$
     Le nombre 15 a deux antécédents : $-4$ et $4$.
 :::
-
-\newpage
-
-**27 janvier 2026**
-
 
