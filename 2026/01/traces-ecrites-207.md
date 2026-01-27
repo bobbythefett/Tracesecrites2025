@@ -4,7 +4,7 @@ course:
   classe: Sec07
   chapitre: Janvier 2026
 lieu: Lycée Alphonse Daudet
-revision: 27 janvier 2026
+revision: 29 janvier 2026
 preambule: 
 type: 
   eval: false
