@@ -1,10 +1,10 @@
 ---
-title: Traces écrites Sec07
+title: Traces écrites Sec11
 course:
-  classe: Sec07
+  classe: Sec11
   chapitre: Janvier 2026
 lieu: Lycée Alphonse Daudet
-revision: 29 janvier 2026
+revision: 27 janvier 2026
 preambule: 
 type: 
   eval: false
@@ -94,6 +94,85 @@ Soit la fonction $f$ définie sur $\mathbb{R}$ par $f(x) = x^2 - 1$.
     $$x = 4 \quad \text{ou} \quad x = -4$$
     Le nombre 15 a deux antécédents : $-4$ et $4$.
 :::
+
+# Représentation graphique
+
+## Courbe représentative
+
+::: definition
+Dans un repère $(O; I, J)$ du plan, la **courbe représentative** de la fonction $f$, notée $\mathcal{C}_f$, est l'ensemble des points $M$ de coordonnées $(x ; y)$ tels que :
+
+1.  $x \in \mathcal{D}$ (l'abscisse est dans l'ensemble de définition).
+2.  $y = f(x)$ (l'ordonnée est l'image de l'abscisse).
+:::
+
+::: center
+\begin{tikzpicture}[scale=2]
+    % Grille et Axes
+    \draw[gray!20, step=0.5] (-.5,-.5) grid (4,3);
+    \draw[->, thick] (-.5,0) -- (4.2,0) node[right] {$x$};
+    \draw[->, thick] (0,-.5) -- (0,3.2) node[above] {$y$};
+    
+    % Courbe
+    \draw[blue, thick, smooth, samples=100, domain=-0.5:3.62] plot (\x, {0.2*(\x+1)*(\x-3)*(\x-1) + 1.5});
+    \node[blue, above] at (3.75, 2.5) {$\mathcal{C}_f$};
+
+    % Lecture de l'image de a
+    \def\a{2.5}
+    \def\fa{0.975}
+    
+    \draw[dashed, red, thick] (\a, 0) -- (\a, \fa);
+    \draw (\a, 0) node[red, below] {$x$};
+    \draw[dashed, red, thick] (\a, \fa) -- (0, \fa) node[left] {$f(x)$};
+    \fill[red] (\a, \fa) circle (2pt);
+    \node[red, below right] at (\a, \fa) {$M(x; f(x))$};
+\end{tikzpicture}
+:::
+
+
+::: methode
+**Savoir si un point appartient à la courbe**
+
+Le point $A(x_A ; y_A)$ appartient à la courbe $\mathcal{C}_f$ si et seulement si $y_A = f(x_A)$.
+:::
+
+## Lecture graphique (Images et Antécédents)
+
+Pour lire graphiquement, il est essentiel de connaître l'orientation des axes :
+
+* L'axe des **abscisses** (horizontal) correspond aux **antécédents** ($x$).
+* L'axe des **ordonnées** (vertical) correspond aux **images** ($f(x)$).
+
+\begin{center}
+\begin{tikzpicture}[scale=1.2]
+    % Grille
+    \draw[gray!20, very thin] (-1,-1) grid (5,4);
+    
+    % Axes
+    \draw[->, thick] (-1,0) -- (5,0) node[right] {$x$ (Antécédents)};
+    \draw[->, thick] (0,-1) -- (0,4) node[above] {$y=f(x)$ (Images)};
+    
+    % Courbe
+    \draw[blue, thick, smooth, domain=0:5] plot (\x, {0.2*\x*\x - 0.5*\x + 1});
+    \node[blue] at (4.5, 3.5) {$\mathcal{C}_f$};
+    
+    % Lecture Image
+    \draw[dashed, red] (3,0) node[below] {$a$} -- (3,1.3);
+    \draw[dashed, red, ->] (3,1.3) -- (0,1.3) node[left] {$f(a)$};
+    \fill[red] (3,1.3) circle (2pt);
+    \node[red, above] at (1.5, 3) {Lecture de l'image};
+
+    % Lecture Antécédent
+    \draw[dashed, green!60!black] (0,2.092) node[left] {$k$} -- (3.9,2.092);
+    \draw[dashed, green!60!black, ->] (3.9,2.092) -- (3.9,0) node[below] {$x_1$};
+    \fill[green!60!black] (3.9,2.092) circle (2pt);
+    \node[green!60!black, right] at (3.9, 1) {Lecture antécédent};
+
+\end{tikzpicture}
+\end{center}
+
+* Pour trouver l'image de $a$ : On part de $a$ sur l'axe des abscisses, on monte vers la courbe, puis on lit la valeur sur l'axe des ordonnées.
+* Pour trouver les antécédents de $k$ : On trace la droite horizontale $y=k$, on repère les points d'intersection avec la courbe, et on lit leurs abscisses.
 
 \newpage
 
@@ -261,9 +340,4 @@ C'est le cas entre $-1$ et $3$.
 
 $$S = [-1 ; 3[$$
 :::
-
-\newpage
-
-**29 janvier 2026**
-
 

@@ -4,7 +4,7 @@ course:
   classe: Sec11
   chapitre: Janvier 2026
 lieu: Lycée Alphonse Daudet
-revision: 27 janvier 2026
+revision: 29 janvier 2026
 preambule: 
 type: 
   eval: false
@@ -177,5 +177,172 @@ Pour lire graphiquement, il est essentiel de connaître l'orientation des axes :
 \newpage
 
 **27 janvier 2026**
+
+# Tableau de signes
+
+## Lien entre Graphique et Algèbre
+
+Avant de dresser des tableaux, il est essentiel de comprendre le lien entre la courbe représentative d'une fonction et son signe.
+
+::: propriete
+Soit $f$ une fonction définie sur un intervalle $I$ et $\mathcal{C}_f$ sa courbe représentative.
+
+* Dire que **$f(x) > 0$** (positif) signifie que la courbe $\mathcal{C}_f$ est située **au-dessus** de l'axe des abscisses.
+* Dire que **$f(x) < 0$** (négatif) signifie que la courbe $\mathcal{C}_f$ est située **en-dessous** de l'axe des abscisses.
+* Dire que **$f(x) = 0$** signifie que la courbe $\mathcal{C}_f$ **coupe** l'axe des abscisses.
+:::
+
+## Signe d'une fonction affine $ax + b$
+
+C'est la "brique élémentaire" pour construire n'importe quel tableau de signes en classe de Seconde.
+
+::: rappel
+Une fonction affine est définie par $f(x) = ax + b$ avec $a \neq 0$.
+Elle est représentée par une droite. Le nombre $a$ est le **coefficient directeur**.
+:::
+
+### Cas 1 : $a > 0$ (Fonction croissante)
+
+Si $a > 0$, la fonction est croissante. Elle part des négatifs pour aller vers les positifs.
+Elle s'annule en $x = -\frac{b}{a}$.
+
+**Représentation graphique :**
+\begin{tikzpicture}
+    \draw[->] (-2,0) -- (2,0) node[right] {$x$};
+    \draw[->] (0,-1) -- (0,1) node[above] {$y$};
+    \draw[thick, blue] (-1.5,-0.75) -- (1.5,0.75) node[right] {$a > 0$};
+    \draw[dashed] (-0.5,0) -- (-0.5,0) node[below] {$-\frac{b}{a}$};
+    \node[red] at (-1, -0.5) {-};
+    \node[green!60!black] at (1, 0.5) {+};
+\end{tikzpicture}
+
+**Tableau de signes :**
+$$
+\begin{array}{|c|ccccc|}
+\hline
+x & -\infty & & -\frac{b}{a} & & +\infty \\
+\hline
+\text{Signe de } ax+b & & - & 0 & + & \\
+\hline
+\end{array}
+$$
+
+### Cas 2 : $a < 0$ (Fonction décroissante)
+
+Si $a < 0$, la fonction est décroissante. Elle part des positifs pour aller vers les négatifs.
+
+**Représentation graphique :**
+\begin{tikzpicture}
+    \draw[->] (-2,0) -- (2,0) node[right] {$x$};
+    \draw[->] (0,-1) -- (0,1) node[above] {$y$};
+    \draw[thick, red] (-1.5,0.75) -- (1.5,-0.75) node[right] {$a < 0$};
+    \draw[dashed] (0.5,0) -- (0.5,0) node[below] {$-\frac{b}{a}$};
+    \node[green!60!black] at (-1, 0.5) {+};
+    \node[red] at (1, -0.5) {-};
+\end{tikzpicture}
+
+**Tableau de signes :**
+$$
+\begin{array}{|c|ccccc|}
+\hline
+x & -\infty & & -\frac{b}{a} & & +\infty \\
+\hline
+\text{Signe de } ax+b & & + & 0 & - & \\
+\hline
+\end{array}
+$$
+
+::: methode
+**Moyen mnémotechnique (Règle du signe de $a$) :**  
+Dans le tableau de signes d'une fonction affine $ax+b$, on met toujours le **signe de $a$ à droite** du zéro.
+:::
+
+## Le Tableau de Signes -- Produit
+
+Pour étudier le signe d'une expression plus complexe, comme un produit de facteurs $(ax+b)(cx+d)$, on utilise la règle des signes (« moins par moins donne plus », etc.) résumée dans un tableau général.
+
+::: methode
+**Protocole de résolution :**
+Pour résoudre une inéquation du type $(2x - 4)(3 - x) \geqslant 0$ :
+
+1.  **Racines :** Trouver les valeurs qui annulent chaque facteur.
+    * $2x - 4 = 0 \iff 2x = 4 \iff x = 2$
+    * $3 - x = 0 \iff -x = -3 \iff x = 3$
+2.  **Tableau :** Construire un tableau avec une ligne pour $x$ et une ligne pour chaque facteur.
+3.  **Ordre :** Placer les valeurs de $x$ trouvées sur la première ligne **dans l'ordre croissant**.
+4.  **Signes :** Remplir les signes de chaque facteur (règle du signe de $a$).
+5.  **Bilan :** Faire le produit des signes pour la dernière ligne.
+6.  **Conclusion :** Lire l'ensemble des solutions $S$ correspondant à l'inégalité demandée.
+:::
+
+::: exemple
+**Exemple résolu :** Étudier le signe de $P(x) = (2x - 4)(3 - x)$.
+
+* Facteur 1 : $2x-4$. Ici $a=2$ (positif). Donc $+$ à droite du 0. S'annule en 2.
+* Facteur 2 : $3-x$. Ici $a=-1$ (négatif). Donc $-$ à droite du 0. S'annule en 3.
+
+**Tableau de signes :**
+
+$$
+\begin{array}{|c|ccccccc|}
+\hline
+x & -\infty & & 2 & & 3 & & +\infty \\
+\hline
+\text{Signe de } 2x-4 & & - & 0 & + & | & + & \\
+\hline
+\text{Signe de } 3-x & & + & | & + & 0 & - & \\
+\hline
+\text{Signe de } P(x) & & - & 0 & + & 0 & - & \\
+\hline
+\end{array}
+$$
+
+*Si on cherchait à résoudre $(2x - 4)(3 - x) \geqslant 0$, la solution serait $S = [2 ; 3]$.*
+:::
+
+## Le Tableau de Signes -- Quotient
+
+La méthode est identique, à une exception près : **la valeur interdite**.
+
+::: definition
+Un quotient $\dfrac{A(x)}{B(x)}$ n'existe pas si son dénominateur $B(x)$ est nul.
+Dans le tableau de signes, on indique cette **valeur interdite** par une **double barre** $||$ sur la ligne de résultat.
+:::
+
+::: exemple
+**Exemple résolu :** Résoudre $\dfrac{x+1}{2x-6} \leqslant 0$.
+
+1.  **Valeur interdite (Dénominateur) :** $2x - 6 = 0 \iff 2x = 6 \iff x = 3$.
+2.  **Numérateur :** $x + 1 = 0 \iff x = -1$.
+3.  **Tableau :**
+    * $x+1$ : $a=1 (>0)$, s'annule en $-1$.
+    * $2x-6$ : $a=2 (>0)$, s'annule en $3$.
+
+$$
+\begin{array}{|c|ccccccc|}
+\hline
+x & -\infty & & -1 & & 3 & & +\infty \\
+\hline
+x+1 & & - & 0 & + & | & + & \\
+\hline
+2x-6 & & - & | & - & 0 & + & \\
+\hline
+\text{Quotient } Q(x) & & + & 0 & - & || & + & \\
+\hline
+\end{array}
+$$
+
+**Conclusion :**
+On cherche où le quotient est négatif ou nul ($\leqslant 0$). On regarde la ligne "Bilan".
+C'est le cas entre $-1$ et $3$.
+* En $-1$, c'est égal à 0 (autorisé par $\leqslant$), on ferme le crochet.
+* En $3$, c'est une valeur interdite (double barre), on ouvre **toujours** le crochet.
+
+$$S = [-1 ; 3[$$
+:::
+
+\newpage
+
+**29 janvier 2026**
 
 
