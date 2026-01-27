@@ -262,8 +262,3 @@ C'est le cas entre $-1$ et $3$.
 $$S = [-1 ; 3[$$
 :::
 
-\newpage
-
-**29 janvier 2026**
-
-
