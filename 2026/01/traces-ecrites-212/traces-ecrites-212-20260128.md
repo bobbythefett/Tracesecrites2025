@@ -172,8 +172,3 @@ Pour lire graphiquement, il est essentiel de connaître l'orientation des axes :
 * Pour trouver l'image de $a$ : On part de $a$ sur l'axe des abscisses, on monte vers la courbe, puis on lit la valeur sur l'axe des ordonnées.
 * Pour trouver les antécédents de $k$ : On trace la droite horizontale $y=k$, on repère les points d'intersection avec la courbe, et on lit leurs abscisses.
 
-\newpage
-
-**29 janvier 2026**
-
-

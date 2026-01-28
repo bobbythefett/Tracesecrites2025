@@ -2,7 +2,7 @@
 title: Traces écrites Sec11
 course:
   classe: Sec11
-  chapitre: Janvier 2026
+  chapitre: CHAPITRE 6 -- Généralités sur les fonctions
 lieu: Lycée Alphonse Daudet
 revision: 29 janvier 2026
 preambule: 
@@ -17,8 +17,6 @@ bac:
 ---
 
 **26 janvier 2026**
-
-**CHAPITRE 6 : Généralités sur les fonctions**
 
 # Notion de fonction et vocabulaire
 

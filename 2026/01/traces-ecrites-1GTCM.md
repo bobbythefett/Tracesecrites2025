@@ -2,7 +2,7 @@
 title: Traces écrites 1G Math TC
 course:
   classe: 1G
-  chapitre: Janvier 2026
+  chapitre: CHAPITRE -- Fonctions affines
 lieu: Lycée Alphonse Daudet
 revision: 7 janvier 2026
 preambule: 
@@ -17,8 +17,6 @@ bac:
 ---
 
 **7 janvier 2026 : H1**
-
-**CHAPITRE : Fonctions affines**
 
 # Définition et Vocabulaire
 
