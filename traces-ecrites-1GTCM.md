@@ -4,7 +4,7 @@ course:
   classe: 1G
   chapitre: CHAPITRE -- Fonctions affines
 lieu: Lycée Alphonse Daudet
-revision: 7 janvier 2026
+revision: 4 février 2026
 preambule: 
 type: 
   eval: false
@@ -34,6 +34,8 @@ $$f(x) = ax + b$$
 * $h(x) = 4$ est affine constante ($a=0, b=4$).
 * $k(x) = 3x$ est affine **linéaire** ($a=3, b=0$).
 :::
+
+\newpage
 
 **7 janvier 2026 : H2**
 
@@ -83,5 +85,5 @@ $$a = \frac{f(x_2) - f(x_1)}{x_2 - x_1} = \frac{\Delta y}{\Delta x}$$
 
 \newpage
 
-**21 janvier 2026**
+**4 février 2026 : H1**
 
