@@ -4,7 +4,7 @@ course:
   classe: Sec12
   chapitre: CHAPITRE 6 -- Généralités sur les fonctions
 lieu: Lycée Alphonse Daudet
-revision: 28 janvier 2026
+revision: 2 février 2026
 preambule: 
 type: 
   eval: false
@@ -176,4 +176,312 @@ Pour lire graphiquement, il est essentiel de connaître l'orientation des axes :
 
 **29 janvier 2026**
 
+# Tableau de signes
+
+## Lien entre Graphique et Algèbre
+
+Avant de dresser des tableaux, il est essentiel de comprendre le lien entre la courbe représentative d'une fonction et son signe.
+
+::: propriete
+Soit $f$ une fonction définie sur un intervalle $I$ et $\mathcal{C}_f$ sa courbe représentative.
+
+* Dire que **$f(x) > 0$** (positif) signifie que la courbe $\mathcal{C}_f$ est située **au-dessus** de l'axe des abscisses.
+* Dire que **$f(x) < 0$** (négatif) signifie que la courbe $\mathcal{C}_f$ est située **en-dessous** de l'axe des abscisses.
+* Dire que **$f(x) = 0$** signifie que la courbe $\mathcal{C}_f$ **coupe** l'axe des abscisses.
+:::
+
+## Signe d'une fonction affine $ax + b$
+
+C'est la "brique élémentaire" pour construire n'importe quel tableau de signes en classe de Seconde.
+
+::: rappel
+Une fonction affine est définie par $f(x) = ax + b$ avec $a \neq 0$.
+Elle est représentée par une droite. Le nombre $a$ est le **coefficient directeur**.
+:::
+
+### Cas 1 : $a > 0$ (Fonction croissante)
+
+Si $a > 0$, la fonction est croissante. Elle part des négatifs pour aller vers les positifs.
+Elle s'annule en $x = -\frac{b}{a}$.
+
+**Représentation graphique :**
+\begin{tikzpicture}
+    \draw[->] (-2,0) -- (2,0) node[right] {$x$};
+    \draw[->] (0,-1) -- (0,1) node[above] {$y$};
+    \draw[thick, blue] (-1.5,-0.75) -- (1.5,0.75) node[right] {$a > 0$};
+    \draw[dashed] (-0.5,0) -- (-0.5,0) node[below] {$-\frac{b}{a}$};
+    \node[red] at (-1, -0.5) {-};
+    \node[green!60!black] at (1, 0.5) {+};
+\end{tikzpicture}
+
+**Tableau de signes :**
+$$
+\begin{array}{|c|ccccc|}
+\hline
+x & -\infty & & -\frac{b}{a} & & +\infty \\
+\hline
+\text{Signe de } ax+b & & - & 0 & + & \\
+\hline
+\end{array}
+$$
+
+### Cas 2 : $a < 0$ (Fonction décroissante)
+
+Si $a < 0$, la fonction est décroissante. Elle part des positifs pour aller vers les négatifs.
+
+**Représentation graphique :**
+\begin{tikzpicture}
+    \draw[->] (-2,0) -- (2,0) node[right] {$x$};
+    \draw[->] (0,-1) -- (0,1) node[above] {$y$};
+    \draw[thick, red] (-1.5,0.75) -- (1.5,-0.75) node[right] {$a < 0$};
+    \draw[dashed] (0.5,0) -- (0.5,0) node[below] {$-\frac{b}{a}$};
+    \node[green!60!black] at (-1, 0.5) {+};
+    \node[red] at (1, -0.5) {-};
+\end{tikzpicture}
+
+**Tableau de signes :**
+$$
+\begin{array}{|c|ccccc|}
+\hline
+x & -\infty & & -\frac{b}{a} & & +\infty \\
+\hline
+\text{Signe de } ax+b & & + & 0 & - & \\
+\hline
+\end{array}
+$$
+
+::: methode
+**Moyen mnémotechnique (Règle du signe de $a$) :**  
+Dans le tableau de signes d'une fonction affine $ax+b$, on met toujours le **signe de $a$ à droite** du zéro.
+:::
+
+## Le Tableau de Signes -- Produit
+
+Pour étudier le signe d'une expression plus complexe, comme un produit de facteurs $(ax+b)(cx+d)$, on utilise la règle des signes (« moins par moins donne plus », etc.) résumée dans un tableau général.
+
+::: methode
+**Protocole de résolution :**
+Pour résoudre une inéquation du type $(2x - 4)(3 - x) \geqslant 0$ :
+
+1.  **Racines :** Trouver les valeurs qui annulent chaque facteur.
+    * $2x - 4 = 0 \iff 2x = 4 \iff x = 2$
+    * $3 - x = 0 \iff -x = -3 \iff x = 3$
+2.  **Tableau :** Construire un tableau avec une ligne pour $x$ et une ligne pour chaque facteur.
+3.  **Ordre :** Placer les valeurs de $x$ trouvées sur la première ligne **dans l'ordre croissant**.
+4.  **Signes :** Remplir les signes de chaque facteur (règle du signe de $a$).
+5.  **Bilan :** Faire le produit des signes pour la dernière ligne.
+6.  **Conclusion :** Lire l'ensemble des solutions $S$ correspondant à l'inégalité demandée.
+:::
+
+::: exemple
+**Exemple résolu :** Étudier le signe de $P(x) = (2x - 4)(3 - x)$.
+
+* Facteur 1 : $2x-4$. Ici $a=2$ (positif). Donc $+$ à droite du 0. S'annule en 2.
+* Facteur 2 : $3-x$. Ici $a=-1$ (négatif). Donc $-$ à droite du 0. S'annule en 3.
+
+**Tableau de signes :**
+
+$$
+\begin{array}{|c|ccccccc|}
+\hline
+x & -\infty & & 2 & & 3 & & +\infty \\
+\hline
+\text{Signe de } 2x-4 & & - & 0 & + & | & + & \\
+\hline
+\text{Signe de } 3-x & & + & | & + & 0 & - & \\
+\hline
+\text{Signe de } P(x) & & - & 0 & + & 0 & - & \\
+\hline
+\end{array}
+$$
+
+*Si on cherchait à résoudre $(2x - 4)(3 - x) \geqslant 0$, la solution serait $S = [2 ; 3]$.*
+:::
+
+## Le Tableau de Signes -- Quotient
+
+La méthode est identique, à une exception près : **la valeur interdite**.
+
+::: definition
+Un quotient $\dfrac{A(x)}{B(x)}$ n'existe pas si son dénominateur $B(x)$ est nul.
+Dans le tableau de signes, on indique cette **valeur interdite** par une **double barre** $||$ sur la ligne de résultat.
+:::
+
+::: exemple
+**Exemple résolu :** Résoudre $\dfrac{x+1}{2x-6} \leqslant 0$.
+
+1.  **Valeur interdite (Dénominateur) :** $2x - 6 = 0 \iff 2x = 6 \iff x = 3$.
+2.  **Numérateur :** $x + 1 = 0 \iff x = -1$.
+3.  **Tableau :**
+    * $x+1$ : $a=1 (>0)$, s'annule en $-1$.
+    * $2x-6$ : $a=2 (>0)$, s'annule en $3$.
+
+$$
+\begin{array}{|c|ccccccc|}
+\hline
+x & -\infty & & -1 & & 3 & & +\infty \\
+\hline
+x+1 & & - & 0 & + & | & + & \\
+\hline
+2x-6 & & - & | & - & 0 & + & \\
+\hline
+\text{Quotient } Q(x) & & + & 0 & - & || & + & \\
+\hline
+\end{array}
+$$
+
+**Conclusion :**
+On cherche où le quotient est négatif ou nul ($\leqslant 0$). On regarde la ligne "Bilan".
+C'est le cas entre $-1$ et $3$.
+* En $-1$, c'est égal à 0 (autorisé par $\leqslant$), on ferme le crochet.
+* En $3$, c'est une valeur interdite (double barre), on ouvre **toujours** le crochet.
+
+$$S = [-1 ; 3[$$
+:::
+
+\newpage
+
+**2 février 2026**
+
+# Variations de fonctions
+
+::: definition
+Soit $f$ une fonction définie sur un intervalle $I$. Soient $a$ et $b$ deux réels de $I$.
+
+* **Croissante :** $f$ est croissante sur $I$ si elle conserve l'ordre.
+    $$Si \quad a \leqslant b \quad \text{alors} \quad f(a) \leqslant f(b)$$
+    *(La courbe "monte" quand on la parcourt de la gauche vers la droite)*.
+
+* **Décroissante :** $f$ est décroissante sur $I$ si elle inverse l'ordre.
+    $$Si \quad a \leqslant b \quad \text{alors} \quad f(a) \geqslant f(b)$$
+    *(La courbe "descend")*.
+
+\begin{center}
+\begin{tikzpicture}[scale=1.5]
+    % --- Graphique Croissant ---
+    \begin{scope}[xshift=0cm]
+        \draw[->] (-0.5,0) -- (3,0) node[right] {$x$};
+        \draw[->] (0,-0.5) -- (0,3) node[above] {$y$};
+        \draw[blue, very thick, domain=0.2:2.8] plot (\x, {0.3*\x*\x + 0.5});
+        \node[blue] at (1.5, 3.6) {\textbf{Fonction Croissante}};
+        \node[below] at (1.5, -0.5) {Si $x$ augmente, $f(x)$ augmente};
+        
+        % Points a et b
+        \draw[dashed] (1,0) node[below]{$a$} -- (1,0.8);
+        \draw[dashed] (2,0) node[below]{$b$} -- (2,1.7);
+    \end{scope}
+
+    % --- Graphique Décroissant ---
+    \begin{scope}[xshift=6cm]
+        \draw[->] (-0.5,0) -- (3,0) node[right] {$x$};
+        \draw[->] (0,-0.5) -- (0,3) node[above] {$y$};
+        \draw[red, very thick, domain=0.2:2.8] plot (\x, {-0.3*\x*\x + 2.8});
+        \node[red] at (1.5, 3.6) {\textbf{Fonction Décroissante}};
+        \node[below] at (1.5, -0.5) {Si $x$ augmente, $f(x)$ diminue};
+
+        % Points a et b
+        \draw[dashed] (1,0) node[below]{$a$} -- (1,2.5);
+        \draw[dashed] (2,0) node[below]{$b$} -- (2,1.6);
+    \end{scope}
+\end{tikzpicture}
+\end{center}
+:::
+
+## Étudier le sens de variation -- La méthode de la différence
+
+Pour savoir comment une fonction $f$ évolue sur un intervalle $I$, on ne peut pas se contenter de regarder sa courbe (ce n'est pas une preuve). Il faut comparer les images de deux nombres quelconques.
+
+::: definition
+**Rappel des définitions :**  
+Soient $a$ et $b$ deux nombres réels de l'intervalle $I$ tels que **$a < b$**.
+
+* Si **$f(a) \leqslant f(b)$** (l'ordre est conservé), la fonction est **croissante**.
+* Si **$f(a) \geqslant f(b)$** (l'ordre est inversé), la fonction est **décroissante**.
+:::
+
+Pour comparer $f(a)$ et $f(b)$ sans connaître leurs valeurs, la méthode la plus sûre est d'étudier le **signe de leur différence**.
+
+::: propriete
+**Critère de la différence :**
+On calcule $f(b) - f(a)$.
+
+1.  Si **$f(b) - f(a) > 0$**, cela signifie que $f(b) > f(a)$.  
+    $\implies$ La fonction a "monté", elle est **croissante**.
+    
+2.  Si **$f(b) - f(a) < 0$**, cela signifie que $f(b) < f(a)$.  
+    $\implies$ La fonction a "descendu", elle est **décroissante**.
+:::
+
+**La Méthode pas à pas :**
+
+Pour étudier les variations d'une fonction $f$ sur un intervalle $I$ :
+
+::: methode
+1.  **Initialisation :** On choisit deux nombres quelconques $a$ et $b$ dans l'intervalle $I$ et on pose l'hypothèse de départ : **$a < b$**.
+2.  **Calcul :** On écrit la différence $f(b) - f(a)$.
+3.  **Transformation :** On développe, réduit et surtout **factorise** l'expression obtenue pour faire apparaître le terme $(b-a)$.
+4.  **Étude du signe :**
+    * On sait que $(b-a) > 0$ (car on a choisi $a < b$).
+    * On étudie le signe du reste de l'expression en utilisant le fait que $a$ et $b$ sont dans $I$.
+5.  **Conclusion :** On applique la règle des signes pour trouver si le résultat est positif ou négatif, et on conclut sur les variations.
+:::
+
+::: exemple
+**Exemple d'application détaillé**
+
+Soit $f$ la fonction définie sur $\mathbb{R}$ par $f(x) = 2x^2 + 3$.
+Démontrons que $f$ est **strictement croissante** sur l'intervalle $[0 ; +\infty[$.
+
+**Étape 1 : Initialisation**
+
+Soient $a$ et $b$ deux nombres réels de l'intervalle $[0 ; +\infty[$ tels que $0 \leqslant a < b$.
+
+**Étape 2 : Calcul de la différence**
+$$f(b) - f(a) = (2b^2 + 3) - (2a^2 + 3)$$
+$$f(b) - f(a) = 2b^2 + 3 - 2a^2 - 3$$
+$$f(b) - f(a) = 2b^2 - 2a^2$$
+
+**Étape 3 : Factorisation**
+
+On met 2 en facteur :
+$$f(b) - f(a) = 2(b^2 - a^2)$$
+On reconnaît l'identité remarquable $b^2 - a^2 = (b-a)(b+a)$ :
+$$f(b) - f(a) = 2(b - a)(b + a)$$
+
+**Étape 4 : Étude du signe**
+
+On regarde le signe de chaque morceau du produit :
+
+* **$2$** est positif.
+* **$(b - a)$** est strictement positif (car on a supposé $a < b$).
+* **$(b + a)$** est strictement positif (car $a$ et $b$ sont dans $[0 ; +\infty[$ et ne sont pas tous les deux nuls).
+
+**Étape 5 : Conclusion**
+
+Le produit de nombres positifs est positif.  
+Donc : $f(b) - f(a) > 0$.  
+Cela revient à dire que $f(b) > f(a)$.
+
+L'ordre est conservé ($a < b \implies f(a) < f(b)$).  
+**La fonction $f$ est donc strictement croissante sur $[0 ; +\infty[$.**
+:::
+
+## Tableau de variations
+
+On résume les variations d'une fonction dans un tableau. Les flèches indiquent la croissance ou la décroissance.
+
+\begin{center}
+\begin{tikzpicture}
+    \tkzTabInit[lgt=3, espcl=4]{$x$ / 1, $f$ / 2}
+    {$-\infty$, $-2$, $3$, $+\infty$}
+    \tkzTabVar{-/ $-\infty$, +/ $5$, -/ $-1$, +/ $+\infty$}
+\end{tikzpicture}
+\end{center}
+
+*Lecture du tableau :*
+
+* La fonction est croissante sur $]-\infty ; -2]$ et sur $[3 ; +\infty[$.
+* La fonction est décroissante sur $[-2 ; 3]$.
+* Le **maximum local** est $5$ (atteint en $x=-2$).
+* Le **minimum local** est $-1$ (atteint en $x=3$).
 
