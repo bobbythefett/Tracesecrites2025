@@ -4,7 +4,7 @@ course:
   classe: Sec11
   chapitre: CHAPITRE 6 -- Généralités sur les fonctions
 lieu: Lycée Alphonse Daudet
-revision: 3 février 2026
+revision: 2 février 2026
 preambule: 
 type: 
   eval: false
@@ -485,9 +485,4 @@ On résume les variations d'une fonction dans un tableau. Les flèches indiquent
 * La fonction est décroissante sur $[-2 ; 3]$.
 * Le **maximum** est $5$ (atteint en $x=-2$).
 * Le **minimum** est $-3$ (atteint en $x=3$).
-
-\newpage
-
-**3 février**
-
 
